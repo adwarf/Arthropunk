@@ -1,0 +1,20 @@
+<!--VERY IMPORTANT, use this to define what work can be done at modded buildings otherwise they just take up space.-->
+
+<Defs>
+  <WorkGiverDef>
+    <defName>DoBillsButcherFlesh</defName>
+    <label>butcher creatures</label>
+    <giverClass>WorkGiver_DoBill</giverClass>
+    <workType>Cooking</workType>
+    <priorityInType>90</priorityInType>
+    <fixedBillGiverDefs>
+      <li>FleshGrafter</li>
+    </fixedBillGiverDefs>
+    <verb>butcher</verb>
+    <gerund>butchering at</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+  </Defs>

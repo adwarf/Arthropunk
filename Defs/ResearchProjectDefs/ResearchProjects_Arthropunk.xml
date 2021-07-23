@@ -1,0 +1,15 @@
+<!--Here is where the research projects for Arthropunks will be defined-->
+<Defs>
+<!--This is the research project that will unlock the opening features of Arthropunk including the starting building and fleshgrafts.-->
+    <ResearchProjectDef>
+        <defName>InsightOfTheFlesh</defName>
+        <label>Insight of the Flesh</label>
+        <description>Utilize the bounty of nature and the flesh of insect abominations to augment your Pawns.</description>
+        <!--Number of Research points it costs to unlock our drug-->
+        <baseCost>600</baseCost>
+        <techLevel>Medieval</techLevel>
+        <!--Position on the research screen-->
+        <researchViewX>2.20</researchViewX>
+        <researchViewY>3.30</researchViewY>
+    </ResearchProjectDef>
+</Defs>
