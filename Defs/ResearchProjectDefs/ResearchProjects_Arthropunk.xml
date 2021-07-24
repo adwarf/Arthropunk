@@ -12,4 +12,18 @@
         <researchViewX>2.20</researchViewX>
         <researchViewY>3.30</researchViewY>
     </ResearchProjectDef>
+    <ResearchProjectDef>
+        <defName>InsightOfTheShell</defName>
+        <label>Insight of the Shell</label>
+        <description>Adopt the chitin and organs of insect relatives to bring your Pawns closer to full enlightenment.</description>
+        <!--Number of Research points it costs to unlock our drug-->
+        <baseCost>900</baseCost>
+        <techLevel>Medieval</techLevel>
+        <prerequisites>
+          <li>InsightOfTheFlesh</li>
+        </prerequisites>
+        <!--Position on the research screen-->
+        <researchViewX>3.20</researchViewX>
+        <researchViewY>3.30</researchViewY>
+    </ResearchProjectDef>
 </Defs>
