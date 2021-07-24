@@ -26,4 +26,18 @@
         <researchViewX>3</researchViewX>
         <researchViewY>5</researchViewY>
     </ResearchProjectDef>
+    <ResearchProjectDef>
+        <defName>FleshAndChitinBecomeOne</defName>
+        <label>Flesh And Chitin Become One</label>
+        <description>Achieve the final insight and become one with the hive.</description>
+        <!--Number of Research points it costs to unlock our drug-->
+        <baseCost>1300</baseCost>
+        <techLevel>Medieval</techLevel>
+        <prerequisites>
+          <li>InsightOfTheShell</li>
+        </prerequisites>
+        <!--Position on the research screen-->
+        <researchViewX>4</researchViewX>
+        <researchViewY>5</researchViewY>
+    </ResearchProjectDef>
 </Defs>
