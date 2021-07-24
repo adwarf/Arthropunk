@@ -2,19 +2,19 @@
 
 <Defs>
   <WorkGiverDef>
-    <defName>DoBillsButcherFlesh</defName>
-    <label>butcher creatures</label>
+    <defName>DoBillsFleshGrafter</defName>
+    <label>fleshgraft</label>
     <giverClass>WorkGiver_DoBill</giverClass>
-    <workType>Cooking</workType>
+    <workType>Smithing</workType>
     <priorityInType>90</priorityInType>
     <fixedBillGiverDefs>
       <li>FleshGrafter</li>
     </fixedBillGiverDefs>
-    <verb>butcher</verb>
-    <gerund>butchering at</gerund>
+    <verb>graft</verb>
+    <gerund>grafting</gerund>
     <requiredCapacities>
       <li>Manipulation</li>
     </requiredCapacities>
     <prioritizeSustains>true</prioritizeSustains>
   </WorkGiverDef>
-  </Defs>
+</Defs>

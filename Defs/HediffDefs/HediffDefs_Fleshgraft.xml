@@ -27,7 +27,7 @@
       <soundWorking>Recipe_Smith</soundWorking>
       <unfinishedThingDef>UnfinishedHealthItemBionic</unfinishedThingDef>
       <skillRequirements>
-        <Crafting>8</Crafting>
+        <Crafting>6</Crafting>
       </skillRequirements>
       <researchPrerequisite>InsightOfTheFlesh</researchPrerequisite>
       <recipeUsers>
@@ -36,7 +36,30 @@
     </recipeMaker>
   </ThingDef>
 
-<!--Flesh Graft Arms-->
+  <!--This check defines our surgery as a valid bionic/implant install recipe.-->
+
+  <RecipeDef Name="SurgeryInstallBodyPartFleshgraftBase" ParentName="SurgeryInstallImplantBase" Abstract="True">
+    <workerClass>Recipe_InstallArtificialBodyPart</workerClass>
+  </RecipeDef>
+
+  <!--Defines the cost of creating a Fleshgraft Arm-->
+
+  <ThingDef ParentName="BodyPartFleshgraftBase">
+    <defName>FleshgraftArm</defName>
+    <label>fleshgraft arm</label>
+    <description>A strange creation of the art of fleshgrafting that has fused wood and insect flesh into a semblance of a human arm.</description>
+    <costList>
+          <WoodLog>20</WoodLog>
+    </costList>
+    <thingSetMakerTags>
+      <li>RewardStandardMidFreq</li>
+    </thingSetMakerTags>
+    <statBases>
+      <Mass>5</Mass>
+    </statBases>
+  </ThingDef>
+
+  <!--Flesh Graft Arms-->
 
   <HediffDef ParentName="AddedBodyPartBase">
     <defName>FleshgraftArm</defName>
@@ -66,29 +89,6 @@
       <betterThanNatural>true</betterThanNatural>
     </addedPartProps>
   </HediffDef>
-
-  <!--This check defines our surgery as a valid bionic/implant install recipe.-->
-
-  <RecipeDef Name="SurgeryInstallBodyPartFleshgraftBase" ParentName="SurgeryInstallImplantBase" Abstract="True">
-    <workerClass>Recipe_InstallArtificialBodyPart</workerClass>
-  </RecipeDef>
-
-  <!--Defines the cost of creating a Fleshgraft Arm-->
-
-  <ThingDef ParentName="BodyPartFleshgraftBase">
-    <defName>FleshgraftArm</defName>
-    <label>fleshgraft arm</label>
-    <description>A strange creation of the art of fleshgrafting that has fused wood and insect flesh into a semblance of a human arm.</description>
-    <costList>
-          <WoodLog>20</WoodLog>
-    </costList>
-    <thingSetMakerTags>
-      <li>RewardStandardMidFreq</li>
-    </thingSetMakerTags>
-    <statBases>
-      <Mass>5</Mass>
-    </statBases>
-  </ThingDef>
 
   <RecipeDef ParentName="SurgeryInstallBodyPartFleshgraftBase">
     <defName>InstallFleshgraftArm</defName>
