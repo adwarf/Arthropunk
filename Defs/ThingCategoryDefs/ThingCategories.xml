@@ -1,0 +1,9 @@
+<Defs>
+
+    <ThingCategoryDef>
+      <defName>BodyPartsFleshgraft</defName>
+      <label>fleshgraft</label>
+      <parent>BodyParts</parent>
+    </ThingCategoryDef>
+
+</Defs>

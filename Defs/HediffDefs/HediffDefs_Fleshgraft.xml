@@ -1,4 +1,118 @@
 <!--Here the Hediffs for bionics and implants will be stored as well as the required content for surgeries to install or remove them.-->
 <Defs>
+  <ThingDef Name="BodyPartFleshgraftBase" ParentName="BodyPartBase" Abstract="True">
+    <techLevel>Medieval</techLevel>
+    <thingCategories>
+      <li>BodyPartsFleshgraft</li>
+    </thingCategories>
+    <graphicData>
+      <texPath>Things/Item/Health/HealthItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.80</drawSize>
+      <color>(0,124,0)</color>
+    </graphicData>
+    <tradeTags>
+      <li>Bionic</li>
+    </tradeTags>
+    <techHediffsTags>
+      <li>Advanced</li>
+    </techHediffsTags>
+    <statBases>
+      <WorkToMake>2000</WorkToMake>
+    </statBases>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedHealthItemBionic</unfinishedThingDef>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+      <researchPrerequisite>InsightOfTheFlesh</researchPrerequisite>
+      <recipeUsers>
+        <li>FleshGrafter</li>
+      </recipeUsers>
+    </recipeMaker>
+  </ThingDef>
 
+<!--Flesh Graft Arms-->
+
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>FleshgraftArm</defName>
+    <label>fleshgraft arm</label>
+    <labelNoun>a fleshgraft arm</labelNoun>
+    <description>An integrated fleshgraft arm.</description>
+    <comps>
+      <li Class="HediffCompProperties_VerbGiver">
+        <tools>
+          <li>
+            <label>fist</label>
+            <capacities>
+              <li>Blunt</li>
+            </capacities>
+            <power>10</power>
+            <cooldownTime>2</cooldownTime>
+            <soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+            <soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+          </li>
+        </tools>
+      </li>
+    </comps>
+    <spawnThingOnRemoved>FleshgraftArm</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1.10</partEfficiency>
+      <betterThanNatural>true</betterThanNatural>
+    </addedPartProps>
+  </HediffDef>
+
+  <!--This check defines our surgery as a valid bionic/implant install recipe.-->
+
+  <RecipeDef Name="SurgeryInstallBodyPartFleshgraftBase" ParentName="SurgeryInstallImplantBase" Abstract="True">
+    <workerClass>Recipe_InstallArtificialBodyPart</workerClass>
+  </RecipeDef>
+
+  <!--Defines the cost of creating a Fleshgraft Arm-->
+
+  <ThingDef ParentName="BodyPartFleshgraftBase">
+    <defName>FleshgraftArm</defName>
+    <label>fleshgraft arm</label>
+    <description>A strange creation of the art of fleshgrafting that has fused wood and insect flesh into a semblance of a human arm.</description>
+    <costList>
+          <WoodLog>20</WoodLog>
+    </costList>
+    <thingSetMakerTags>
+      <li>RewardStandardMidFreq</li>
+    </thingSetMakerTags>
+    <statBases>
+      <Mass>5</Mass>
+    </statBases>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallBodyPartFleshgraftBase">
+    <defName>InstallFleshgraftArm</defName>
+    <label>install fleshgraft arm</label>
+    <description>Install a fleshgraft arm.</description>
+    <jobString>Installing fleshgraft arm.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>FleshgraftArm</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>FleshgraftArm</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Shoulder</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>FleshgraftArm</addsHediff>
+  </RecipeDef>
 </Defs>

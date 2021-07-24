@@ -7,7 +7,7 @@
     <description>An organism designed to assist the user in creating Fleshgrafts.</description>
     <thingClass>Building_WorkTable</thingClass>
     <graphicData>
-      <texPath>Things/Building/Production/TableButcher</texPath>
+      <texPath>Things/Building/Production/FleshGrafter</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <drawSize>(3.5,1.5)</drawSize>
       <damageData>
@@ -45,6 +45,7 @@
     <recipes>
       <li>ButcherCorpseFlesh</li>
       <li>Make_Kibble</li>
+      <li>Make_FleshgraftArm</li>
     </recipes>
     <inspectorTabs>
       <li>ITab_Bills</li>
