@@ -1,0 +1,116 @@
+<Defs>
+
+<!--Here we create the basic class for all Arthropunk blade weapons, the parent being the Base Weapon template from the vanilla code.-->
+<ThingDef Name="ArthropunkMeleeWeapon_Blades" ParentName="BaseWeapon" Abstract="True">
+<!--here we set the tech level, ensure it cant be smelted down because smelting down to wood would be fucking weird, and allow it to be burned-->
+    <techLevel>Medieval</techLevel>
+    <smeltable>false</smeltable>
+    <burnableByRecipe>true</burnableByRecipe>
+<!--Here we define it as a melee weapon-->
+    <thingCategories>
+      <li>WeaponsMelee</li>
+    </thingCategories>
+<!--Here we define the classes of the weapon itself, melee is self explanatory. I am unsure what piercer does - adwarf-->
+    <weaponClasses>
+      <li>Melee</li>
+      <li>MeleePiercer</li>
+    </weaponClasses>
+    <relicChance>1</relicChance>
+<!--Here we define the general recipe information for *everything* that is assigned this weapon class. Setting up the required skill, the sound effects, the place they can be made, and the unfinished texture.-->
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <recipeUsers>
+        <li>FleshGrafter</li>
+      </recipeUsers>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+    <!--??? Not sure to be honest-->
+      <defaultIngredientFilter>
+            <categories>
+          <li>Root</li>
+            </categories>
+    <!--Specifies what materials are not allowed in the materials.-->
+        <disallowedThingDefs>
+          <li>Plasteel</li>
+          <li>Uranium</li>
+          <li>Silver</li>
+          <li>Gold</li>
+        </disallowedThingDefs>
+      </defaultIngredientFilter>
+    </recipeMaker>
+    <inspectorTabs>
+      <li>ITab_Art</li>
+    </inspectorTabs>
+</ThingDef>
+
+<!--Here we define that the weapon is a melee weapon of the sharp quality type meaning it's primarily a cutting/stabbing weapon I think?-->
+  <ThingDef ParentName="ArthropunkMeleeWeapon_Blades">
+  <!--Name for the weapon obviously and description for it-->
+    <defName>MeleeWeapon_RipperSword</defName>
+    <label>ripper sword</label>
+    <description>A blade crafted from fusing together the scythe of Megaspiders, and wood in the hands of a Fleshcrafter.</description>
+    <!--Graphics code-->
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/Gladius</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <uiIconScale>1.2</uiIconScale>
+    <!--Set's the weapons tech level-->
+    <techLevel>Medieval</techLevel>
+    <!--Set's the amount of materials the weapon needs to craft-->
+    <costStuffCount>50</costStuffCount>
+    <!--??? Look into-->
+    <weaponTags>
+      <li>MedievalMeleeDecent</li>
+    </weaponTags>
+    <!--Defining crafting time and weapon size, relic chance I believe is used for Ideology?-->
+    <statBases>
+      <WorkToMake>10000</WorkToMake>
+      <Mass>0.85</Mass>
+    </statBases>
+    <relicChance>2</relicChance>
+    <!--Set's where the pawn holds the weapon presumably-->
+    <equippedAngleOffset>-65</equippedAngleOffset>
+    <!--Sets what type of material the weapon can pull from-->
+    <stuffCategories>
+      <li>Woody</li>
+    </stuffCategories>
+    <!--Tools is essentially the different types of attacks the weapon can perform. In the instance of the ripper sword we have a pommel strike, a stab, and a cut. Cooldown time is attack speed, power is damage, capacities specifics damage type-->
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>point</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>18</power>
+        <cooldownTime>1</cooldownTime>
+      </li>
+      <li>
+        <label>edge</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>18</power>
+        <cooldownTime>1</cooldownTime>
+      </li>
+    </tools>
+<!--Defines the skills and research requirements for crafting it-->
+    <recipeMaker>
+      <researchPrerequisite>InsightOfTheFlesh</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>6</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+
+</Defs>

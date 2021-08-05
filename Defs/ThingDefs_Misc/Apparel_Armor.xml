@@ -1,0 +1,121 @@
+<Defs>
+
+  <ThingDef Name="ArmorArthropunk" ParentName="ApparelBase" Abstract="True">
+    <smeltable>false</smeltable>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <recipeUsers>
+        <li>FleshGrafter</li>
+      </recipeUsers>
+      <defaultIngredientFilter>
+        <categories>
+          <li>Root</li>
+        </categories>
+        <disallowedThingDefs>
+          <li>Gold</li>
+          <li>Silver</li>
+          <li>Plasteel</li>
+          <li>Jade</li>
+          <li>Uranium</li>
+        </disallowedThingDefs>
+      </defaultIngredientFilter>
+    </recipeMaker>
+  </ThingDef>
+
+<!--Is calling to the above class for armors and using that base information it's pulling to go with the rest below.-->
+<ThingDef ParentName="ArmorArthropunk">
+<!--Name and description for the apparel-->
+    <defName>Apparel_InsectoidArmor</defName>
+    <label>insectoid armor</label>
+    <description>Armor crafted from the merging of insectoid chitin and wood into a semi living defensive apparel.</description>
+    <!--Here's where the recipe is defined. In it the unfinished form is specified for when it can't be crafted in a single setting, the research reqs is speificed, and the skill requirement is stated.-->
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
+      <researchPrerequisite>InsightOfTheFlesh</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+<!--Basic graphic data code-->
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/PlateArmor/PlateArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <!--Set's category of the materials that can be used to craft it and the amount-->
+    <stuffCategories>
+      <li>Woody</li>
+    </stuffCategories>
+    <costStuffCount>170</costStuffCount>
+    <!--Set's the base crafting information as well as establishes how the armor itself is modified by a material's stats as different types of wood, metal, etc have different stats for armor and insulation.-->
+    <statBases>
+      <WorkToMake>20000</WorkToMake>
+      <MaxHitPoints>350</MaxHitPoints>
+      <Mass>10</Mass>
+      <StuffEffectMultiplierArmor>0.73</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>1.0</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+<!--Equip delay is how long the armor takes to put on-->
+      <EquipDelay>10</EquipDelay>
+    </statBases>
+    <!--Sets how frequently the armor will appear as a quest reward and how good it is if I'm not mistaken-->
+    <thingSetMakerTags>
+      <li>RewardStandardLowFreq</li>
+      <li>RewardStandardQualitySuper</li>
+    </thingSetMakerTags>
+    <!--Stat offsets are cool! Essentially they are your equipment modifiers meaning we can make armor modify stuff like move speed below, social impact, negotiation bonuses, etc. Should test if they can give health bonuses or if we'll need the o21 tool box for that-->
+    <equippedStatOffsets>
+      <MoveSpeed>-0.2</MoveSpeed>
+    </equippedStatOffsets>
+<!--Set this to categorize specifically as apparel, armor rather than regular apparel-->
+    <thingCategories>
+      <li>ApparelArmor</li>
+    </thingCategories>
+    <!--Sets up what parts of the body the armor covers and thus which ones it protects.-->
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <!--specifies the graphic displayed when worn-->
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/PlateArmor/PlateArmor</wornGraphicPath>
+      <!--Declares what apparel layers it will occupy-->
+      <layers>
+        <li>Middle</li>
+        <li>Shell</li>
+      </layers>
+      <!--Not super sure what this does?-->
+      <tags>
+        <li>MedievalMilitary</li>
+      </tags>
+      <!--Adds the armor to default outfit presets.-->
+      <defaultOutfitTags>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+    </apparel>
+    <!--??????-->
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <weight>10</weight>
+          <only>(0.33,0.33,0.33)</only>
+        </li>
+        <li>
+          <weight>10</weight>
+          <only>(0.65,0.65,0.65)</only>
+        </li>
+        <li>
+          <weight>6</weight>
+          <min>(0.3,0.3,0.3)</min>
+          <max>(0.5,0.5,0.5)</max>
+        </li>
+      </options>
+    </colorGenerator>
+  </ThingDef>
+
+</Defs>
