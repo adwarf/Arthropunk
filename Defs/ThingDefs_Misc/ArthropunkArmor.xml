@@ -27,7 +27,7 @@
 
 <!--Is calling to the above class for armors and using that base information it's pulling to go with the rest below.-->
 <ThingDef ParentName="ArmorArthropunk">
-<!--Name and description for the apparel-->
+    <!--Name and description for the apparel-->
     <defName>Apparel_InsectoidArmor</defName>
     <label>insectoid armor</label>
     <description>Armor crafted from the merging of insectoid chitin and wood into a semi living defensive apparel.</description>
@@ -39,7 +39,7 @@
         <Crafting>8</Crafting>
       </skillRequirements>
     </recipeMaker>
-<!--Basic graphic data code-->
+    <!--Basic graphic data code-->
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/PlateArmor/PlateArmor</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -89,7 +89,7 @@
         <li>Middle</li>
         <li>Shell</li>
       </layers>
-      <!--Not super sure what this does?-->
+      <!--Not super sure what this does? Presumably makes it available to medieval military factions?-->
       <tags>
         <li>MedievalMilitary</li>
       </tags>
@@ -98,7 +98,7 @@
         <li>Soldier</li>
       </defaultOutfitTags>
     </apparel>
-    <!--??????-->
+    <!--Most likely how the game determines shading colors I believe-->
     <colorGenerator Class="ColorGenerator_Options">
       <options>
         <li>

@@ -47,7 +47,7 @@
 
 <!--Here we define that the weapon is a melee weapon of the sharp quality type meaning it's primarily a cutting/stabbing weapon I think?-->
   <ThingDef ParentName="ArthropunkMeleeWeapon_Blades">
-  <!--Name for the weapon obviously and description for it-->
+    <!--Name for the weapon obviously and description for it-->
     <defName>MeleeWeapon_RipperSword</defName>
     <label>ripper sword</label>
     <description>A blade crafted from fusing together the scythe of Megaspiders, and wood in the hands of a Fleshcrafter.</description>
