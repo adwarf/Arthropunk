@@ -5,12 +5,14 @@
     <thingCategories>
       <li>BodyPartsFleshgraft</li>
     </thingCategories>
+    <!--Graphical information for this entire category-->
     <graphicData>
       <texPath>Things/Item/Health/HealthItem</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>0.80</drawSize>
       <color>(0,124,0)</color>
     </graphicData>
+    <!--Determines trade caravans that carry it as far as I'm aware-->
     <tradeTags>
       <li>Bionic</li>
     </tradeTags>
@@ -20,6 +22,7 @@
     <statBases>
       <WorkToMake>2000</WorkToMake>
     </statBases>
+    <!--Basic information defining the attributes, sound effects, and requirements for crafting fleshgrafts-->
     <recipeMaker>
       <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
       <workSkill>Crafting</workSkill>
@@ -42,30 +45,36 @@
     <workerClass>Recipe_InstallArtificialBodyPart</workerClass>
   </RecipeDef>
 
-  <!--Defines the cost of creating a Fleshgraft Arm-->
+  <!--Defines a Fleshgraft Arm-->
 
   <ThingDef ParentName="BodyPartFleshgraftBase">
+  <!--Name and description-->
     <defName>FleshgraftArm</defName>
     <label>fleshgraft arm</label>
     <description>A strange creation of the art of fleshgrafting that has fused wood and insect flesh into a semblance of a human arm.</description>
+    <!--Cost of crafting one-->
     <costList>
           <WoodLog>20</WoodLog>
     </costList>
+    <!--Determines frequency of these being rewards-->
     <thingSetMakerTags>
       <li>RewardStandardMidFreq</li>
     </thingSetMakerTags>
+    <!--Gives the arm a mass of 5-->
     <statBases>
       <Mass>5</Mass>
     </statBases>
   </ThingDef>
 
-  <!--Flesh Graft Arms-->
+  <!--Defines the effects and information of Flesh Graft Arms when added to someone's body.-->
 
   <HediffDef ParentName="AddedBodyPartBase">
+    <!--Name of the hediff, description, and the nouns used for it.-->
     <defName>FleshgraftArm</defName>
     <label>fleshgraft arm</label>
     <labelNoun>a fleshgraft arm</labelNoun>
     <description>An integrated fleshgraft arm.</description>
+    <!--Comps is used here to define that a fleshgraft arm has a different fist attack from a regular arm, in this case having a higher damage.-->
     <comps>
       <li Class="HediffCompProperties_VerbGiver">
         <tools>
@@ -82,19 +91,25 @@
         </tools>
       </li>
     </comps>
+    <!--Ensures we get a fleshgraft arm returned if we remove it-->
     <spawnThingOnRemoved>FleshgraftArm</spawnThingOnRemoved>
+    <!--Here we're defining the efficency rate of the flesh graft arm and confirming that it is better than a basic flesh and blood arm.-->
     <addedPartProps>
       <solid>true</solid>
+      <!--1.10 translates to 110%-->
       <partEfficiency>1.10</partEfficiency>
       <betterThanNatural>true</betterThanNatural>
     </addedPartProps>
   </HediffDef>
 
+  <!--Defining the surgery for actually installing the arm, we call back to the previous install surgery above.-->
   <RecipeDef ParentName="SurgeryInstallBodyPartFleshgraftBase">
+    <!--Name and description of the surgery as well as how it appears in the activity log-->
     <defName>InstallFleshgraftArm</defName>
     <label>install fleshgraft arm</label>
     <description>Install a fleshgraft arm.</description>
     <jobString>Installing fleshgraft arm.</jobString>
+    <!--Here we specify that you need 1 flesh graft arm to replace another arm-->
     <ingredients>
       <li>
         <filter>
@@ -110,9 +125,159 @@
         <li>FleshgraftArm</li>
       </thingDefs>
     </fixedIngredientFilter>
+    <!--Here we specify that it can only be added to the shoulder-->
     <appliedOnFixedBodyParts>
       <li>Shoulder</li>
     </appliedOnFixedBodyParts>
+    <!--Here we tell the surgery to give the Fleshgraft Arm Hediff that we defined directly above this surgery.-->
     <addsHediff>FleshgraftArm</addsHediff>
+  </RecipeDef>
+
+   <!--Defines a Fleshgraft Leg-->
+
+  <ThingDef ParentName="BodyPartFleshgraftBase">
+  <!--Name and description-->
+    <defName>FleshgraftLeg</defName>
+    <label>fleshgraft leg</label>
+    <description>A strange creation of the art of fleshgrafting that has fused wood and insect flesh into a semblance of a human leg.</description>
+    <!--Cost of crafting one-->
+    <costList>
+          <WoodLog>20</WoodLog>
+    </costList>
+    <!--Determines frequency of these being rewards-->
+    <thingSetMakerTags>
+      <li>RewardStandardMidFreq</li>
+    </thingSetMakerTags>
+    <!--Gives the arm a mass of 5-->
+    <statBases>
+      <Mass>7</Mass>
+    </statBases>
+  </ThingDef>
+
+  <!--Defines the effects and information of Flesh Graft Legs when added to someone's body.-->
+
+  <HediffDef ParentName="AddedBodyPartBase">
+    <!--Name of the hediff, description, and the nouns used for it.-->
+    <defName>FleshgraftLeg</defName>
+    <label>fleshgraft leg</label>
+    <labelNoun>a fleshgraft leg</labelNoun>
+    <description>An integrated fleshgraft leg.</description>
+    <!--Ensures we get a fleshgraft leg returned if we remove it-->
+    <spawnThingOnRemoved>FleshgraftLeg</spawnThingOnRemoved>
+    <!--Here we're defining the efficency rate of the flesh graft leg and confirming that it is better than a basic flesh and blood leg.-->
+    <addedPartProps>
+      <solid>true</solid>
+      <!--1.10 translates to 110%-->
+      <partEfficiency>1.10</partEfficiency>
+      <betterThanNatural>true</betterThanNatural>
+    </addedPartProps>
+  </HediffDef>
+
+  <!--Defining the surgery for actually installing the leg, we call back to the previous install surgery above.-->
+  <RecipeDef ParentName="SurgeryInstallBodyPartFleshgraftBase">
+    <!--Name and description of the surgery as well as how it appears in the activity log-->
+    <defName>InstallFleshgraftLeg</defName>
+    <label>install fleshgraft leg</label>
+    <description>Install a fleshgraft leg.</description>
+    <jobString>Installing fleshgraft leg.</jobString>
+    <!--Here we specify that you need 1 flesh graft leg to replace another leg-->
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>FleshgraftLeg</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>FleshgraftLeg</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <!--Here we specify that it can only be added to the legs-->
+    <appliedOnFixedBodyParts>
+      <li>Leg</li>
+    </appliedOnFixedBodyParts>
+    <!--Here we tell the surgery to give the Fleshgraft Leg Hediff that we defined directly above this surgery.-->
+    <addsHediff>FleshgraftLeg</addsHediff>
+  </RecipeDef>
+
+   <!--Defines a Ear Symbiote-->
+
+  <ThingDef ParentName="BodyPartFleshgraftBase">
+  <!--Name and description-->
+    <defName>EarSymbiote</defName>
+    <label>ear symbiote</label>
+    <description>An organism harvested and warped from the flesh of insectoids meant to create a symbitoic relationship with it's host in place of their ear.</description>
+    <!--Cost of crafting one-->
+    <costList>
+          <WoodLog>20</WoodLog>
+    </costList>
+    <!--Determines frequency of these being rewards-->
+    <thingSetMakerTags>
+      <li>RewardStandardMidFreq</li>
+    </thingSetMakerTags>
+    <!--Gives the ear a mass of 5-->
+    <statBases>
+      <Mass>0.3</Mass>
+    </statBases>
+  </ThingDef>
+
+  <!--Defines the effects and information of Ear Symbiotes when added to someone's body.-->
+
+  <HediffDef ParentName="AddedBodyPartBase">
+    <!--Name of the hediff, description, and the nouns used for it.-->
+    <defName>EarSymbiote</defName>
+    <label>ear symbiote</label>
+    <labelNoun>an ear symbiote</labelNoun>
+    <description>An implanted ear symbiote.</description>
+    <!--Ensures we get an ear symbiote returned if we remove it-->
+    <spawnThingOnRemoved>EarSymbiote</spawnThingOnRemoved>
+    <!--Here we're defining the efficency rate of the flesh graft arm and confirming that it is better than a basic ear.-->
+    <addedPartProps>
+      <solid>true</solid>
+      <!--1.10 translates to 110%-->
+      <partEfficiency>1.50</partEfficiency>
+
+      <betterThanNatural>true</betterThanNatural>
+    </addedPartProps>
+    <stages>
+      <li>
+        <hungerRateFactorOffset>0.20</hungerRateFactorOffset>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!--Defining the surgery for actually installing the symbiote, we call back to the previous install surgery above.-->
+  <RecipeDef ParentName="SurgeryInstallBodyPartFleshgraftBase">
+    <!--Name and description of the surgery as well as how it appears in the activity log-->
+    <defName>ImplantEarSymbiote</defName>
+    <label>implant ear symbiote</label>
+    <description>Implant an ear symbiote.</description>
+    <jobString>Implanting ear symbiote.</jobString>
+    <!--Here we specify that you need 1 ear symbiote to replace another arm-->
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EarSymbiote</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EarSymbiote</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <!--Here we specify that it can only be added to the ears-->
+    <appliedOnFixedBodyParts>
+      <li>Ear</li>
+    </appliedOnFixedBodyParts>
+    <!--Here we tell the surgery to give the ear symbiote Hediff that we defined directly above this surgery.-->
+    <addsHediff>EarSymbiote</addsHediff>
   </RecipeDef>
 </Defs>

@@ -1,6 +1,6 @@
 <Defs>
 
-  <ThingDef Name="ArmorArthropunk" ParentName="ApparelBase" Abstract="True">
+  <ThingDef Name="ArmorArthropunkBase" ParentName="ApparelBase" Abstract="True">
     <smeltable>false</smeltable>
     <recipeMaker>
       <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
@@ -26,7 +26,7 @@
   </ThingDef>
 
 <!--Is calling to the above class for armors and using that base information it's pulling to go with the rest below.-->
-<ThingDef ParentName="ArmorArthropunk">
+<ThingDef ParentName="ArmorArthropunkBase">
     <!--Name and description for the apparel-->
     <defName>Apparel_InsectoidArmor</defName>
     <label>insectoid armor</label>
