@@ -1,0 +1,12 @@
+<Patch>
+
+	<!--==================== Grub Hive Spawning ====================-->
+
+    <Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName = "Hive"]/comps/li/spawnablePawnKinds</xpath>
+		<value>
+			<li>Grub</li>
+		</value>
+	</Operation>
+
+</Patch>

@@ -1,0 +1,113 @@
+<Defs>
+
+    <!--==================== Grub ThingDef ====================-->
+
+    <ThingDef ParentName="BaseInsect">
+        <defName>Grub</defName>
+        <label>grub</label>
+        <description>A neotenous, small bioengineered insectoid. It's not very dangerous and it's slow.</description>
+        <statBases>
+            <MoveSpeed>0.5</MoveSpeed>
+            <ComfyTemperatureMin>-25</ComfyTemperatureMin>
+            <MarketValue>50</MarketValue>
+            <LeatherAmount>0</LeatherAmount>
+        </statBases>
+        <uiIconScale>1.1</uiIconScale>
+        <tools>
+            <li>
+                <label>mandibles</label>
+                <capacities>
+                    <li>Cut</li>
+                </capacities>
+                <power>1</power>
+                <cooldownTime>2</cooldownTime>
+                <linkedBodyPartsGroup>Mouth</linkedBodyPartsGroup>
+            </li>
+        </tools>
+        <race>
+        <body>BeetleLike</body>
+        <baseHungerRate>0.25</baseHungerRate>
+        <baseBodySize>0.35</baseBodySize>
+        <baseHealthScale>0.4</baseHealthScale>
+        <gestationPeriodDays>1</gestationPeriodDays>
+        <useMeatFrom>Megaspider</useMeatFrom>
+        <lifeExpectancy>0.5</lifeExpectancy>
+        <wildness>0.3</wildness>
+        <petness>1</petness>
+        <nuzzleMtbHours>12</nuzzleMtbHours>
+        <trainability>None</trainability>
+        <lifeStageAges>
+            <li>
+            <def>EusocialInsectLarva</def>
+            <minAge>0</minAge>
+            </li>
+            <li>
+            <def>EusocialInsectJuvenile</def>
+            <minAge>0.04</minAge>
+            </li>
+            <li>
+            <def>EusocialInsectAdult</def>
+            <minAge>0.15</minAge>
+            <soundWounded>Pawn_Spelopede_Pain</soundWounded>
+            <soundDeath>Pawn_Spelopede_Death</soundDeath>
+            <soundCall>Pawn_Spelopede_Call</soundCall>
+            <soundAngry>Pawn_Spelopede_Angry</soundAngry>
+            </li>
+        </lifeStageAges>
+        <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+        <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+        <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+        </race>
+        <tradeTags>
+        <li>AnimalInsect</li>
+        </tradeTags>
+    </ThingDef>
+
+    <PawnKindDef ParentName="AnimalKindBase">
+        <defName>Grub</defName>
+        <label>grub</label>
+        <race>Grub</race>
+        <combatPower>10</combatPower>
+        <canArriveManhunter>false</canArriveManhunter>
+        <ecoSystemWeight>0.4</ecoSystemWeight>
+        <lifeStages>
+        <li>
+            <bodyGraphicData>
+                <texPath>Things/Pawn/Animal/Arpk_Grub/Grub</texPath>
+                <drawSize>1</drawSize>
+                <color>(156,148,125)</color>
+            </bodyGraphicData>
+            <dessicatedBodyGraphicData>
+                <texPath>Things/Pawn/Animal/Spelopede/Dessicated_Spelopede</texPath>
+                <drawSize>1</drawSize>
+            </dessicatedBodyGraphicData>
+        </li>
+        <li>
+            <bodyGraphicData>
+                <texPath>Things/Pawn/Animal/Arpk_Grub/Grub</texPath>
+                <drawSize>1.25</drawSize>
+                <color>(156,148,125)</color>
+            </bodyGraphicData>
+            <dessicatedBodyGraphicData>
+                <texPath>Things/Pawn/Animal/Spelopede/Dessicated_Spelopede</texPath>
+                <drawSize>1.25</drawSize>
+            </dessicatedBodyGraphicData>
+        </li>
+        <li>
+            <bodyGraphicData>
+                <texPath>Things/Pawn/Animal/Arpk_Grub/Grub</texPath>
+                <drawSize>2</drawSize>
+                <color>(156,148,125)</color>
+                <shadowData>
+                    <volume>(0.4, 0.5, 0.37)</volume>
+                    <offset>(0,0,-0.15)</offset>
+                </shadowData>
+            </bodyGraphicData>
+            <dessicatedBodyGraphicData>
+                <texPath>Things/Pawn/Animal/Spelopede/Dessicated_Spelopede</texPath>
+                <drawSize>1.65</drawSize>
+            </dessicatedBodyGraphicData>
+        </li>
+        </lifeStages>
+    </PawnKindDef>
+</Defs>
